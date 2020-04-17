@@ -18,6 +18,6 @@ steps:
   displayName: 'Install netlify-cli'
 
 # Deploy the wwwroot from the output directory
-# The argument "--prod" deploys to  
+# The argument "--prod" deploys to production
 - script: npx netlify deploy --prod --dir $(buildOutput)/wwwroot --site $(netlify_site_id) --auth $(netlify_api_key)
   displayName: 'Deploy site to Netlify'
