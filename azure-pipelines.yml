@@ -12,13 +12,9 @@ steps:
 - script: dotnet publish --configuration $(buildConfiguration) --output $(buildOutput)
   displayName: 'Publish Blazor Site'
 
-- task: Npm@1
-  displayName: 'Install netlify client'
-  inputs:
-    command: 'custom'
-    customCommand: 'install netlify-cli'
-
 # Deploy the wwwroot
-# The arguement "--prod" 
-- script: npx netlify deploy --prod --dir $(buildOutput)/wwwroot --site $(netlify_site_id) --auth $(netlify_api_key)
+# The argument "--prod" deploys to  
+- script: |
+    npm install netlify-cli 
+    npx netlify deploy --prod --dir $(buildOutput)/wwwroot --site $(netlify_site_id) --auth $(netlify_api_key)
   displayName: 'netlify deploy'
