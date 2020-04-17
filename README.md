@@ -1,2 +1,2 @@
 # Blazor.NetlifyDeploy
-Example code for hosting a Blazor Application on Netlify
+Example code for hosting and deploying a Blazor Application for Netlify
